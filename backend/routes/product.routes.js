@@ -209,6 +209,7 @@ router.get('/bestsellers/list', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const productData = req.body;
+        console.log('Received product data:', productData);
 
         // Insert product
         const { data: product, error: productError } = await supabaseAdmin
@@ -218,9 +219,12 @@ router.post('/', async (req, res) => {
             .single();
 
         if (productError) {
+            console.error('Product insert error:', productError);
             return res.status(400).json({
                 error: 'Insert Failed',
-                message: productError.message
+                message: productError.message,
+                details: productError.details,
+                hint: productError.hint
             });
         }
 

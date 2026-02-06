@@ -132,6 +132,8 @@ const Admin = () => {
     if (formData.weight_grams) productData.weight = parseFloat(formData.weight_grams);
     if (formData.image_url) productData.image_url = formData.image_url;
 
+    console.log('Submitting product data:', productData);
+
     if (editingProduct) {
       updateProductMutation.mutate({ id: editingProduct.id, data: productData });
     } else {
