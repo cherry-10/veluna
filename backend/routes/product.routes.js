@@ -229,12 +229,12 @@ router.post('/', async (req, res) => {
         }
 
         // If image_url is provided, add it to product_images
-        if (productData.image_url) {
+        if (image_url) {
             await supabaseAdmin
                 .from('product_images')
                 .insert({
                     product_id: product.id,
-                    image_url: productData.image_url,
+                    image_url: image_url,
                     is_primary: true,
                     display_order: 1
                 });
