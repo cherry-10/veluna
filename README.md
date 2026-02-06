@@ -1,13 +1,32 @@
-# VELUNA by SKF - E-Commerce Platform
+# 🕯️ VELUNA by SKF - Luxury Candle E-commerce Platform
 
-## 🌟 Project Overview
+A sophisticated, full-stack e-commerce platform for handcrafted candles and floral creations with classical aesthetic design.
 
-A fully responsive, production-ready e-commerce web application for VELUNA by SKF - a premium handcrafted candles and floral creations brand. Built with modern technologies and best practices.
+## ✨ Features
 
-## 🛠️ Technology Stack
+- 🎨 **Posh Classical Design** - Elegant cursive fonts, luxury color palette
+- 🛍️ **Full E-commerce** - Product catalog, cart, checkout, orders
+- 👤 **User Authentication** - Supabase Auth with profiles
+- 🎨 **Custom Candle Builder** - Multi-step customization flow
+- 📦 **Admin Panel** - Complete product management system
+- 🎉 **Occasions** - Shop by special events
+- 📱 **Fully Responsive** - Mobile-first design
+- 🖼️ **High-Quality Images** - Professional candle photography
+
+## 🚀 Live Demo
+
+- **Frontend**: [Deploy to Vercel](https://vercel.com)
+- **Backend**: [Deploy to Render](https://render.com)
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** with Vite
+- React 18 + Vite
+- Tailwind CSS
+- React Router DOM
+- React Query
+- Framer Motion
+- React Hook Form
 - **Tailwind CSS** for styling
 - **Framer Motion** for animations
 - **React Router DOM** for navigation
