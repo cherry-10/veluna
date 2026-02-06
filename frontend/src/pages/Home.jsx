@@ -35,7 +35,7 @@ const Home = () => {
             loading="eager"
             onError={(e) => {e.target.src='https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=2000&h=1200&fit=crop&auto=format&q=95'}}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10"></div>
         </div>
 
         <div className="container-custom relative z-10 text-left md:text-center px-6 md:px-4 max-w-5xl mx-auto">
@@ -79,9 +79,10 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link to="/shop?category=candles" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-56">
             <img
-              src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1400&h=600&fit=crop&auto=format&q=95"
+              src="/images/card1.jpg"
               alt="Handcrafted Candles"
               className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+              onError={(e) => {e.target.src='https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1400&h=600&fit=crop&auto=format&q=95'}}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
               <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Handcrafted Candles</h3>
@@ -90,9 +91,10 @@ const Home = () => {
           </Link>
           <Link to="/shop?category=flowers" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-56">
             <img
-              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1400&h=600&fit=crop&auto=format&q=95"
-              alt="Floral Decorated Candles"
+              src="/images/card2.jpg"
+              alt="Floral Creations"
               className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+              onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1400&h=600&fit=crop&auto=format&q=95'}}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
               <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Floral Creations</h3>
@@ -112,9 +114,10 @@ const Home = () => {
           <Link to="/shop?category=jar-candles" className="group">
             <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=600&h=600&fit=crop&auto=format&q=90"
+                src="/images/jar.jpg"
                 alt="Luxury Jar Candles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {e.target.src='https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=600&h=600&fit=crop&auto=format&q=90'}}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
                 <h3 className="font-playfair text-xl font-semibold text-white">Jar Candles</h3>
@@ -125,9 +128,10 @@ const Home = () => {
           <Link to="/shop?category=flower-candles" className="group">
             <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&h=600&fit=crop&auto=format&q=90"
+                src="/images/Flowercandles.jpg"
                 alt="Floral Decorated Candles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&h=600&fit=crop&auto=format&q=90'}}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
                 <h3 className="font-playfair text-xl font-semibold text-white">Flower Candles</h3>
@@ -138,9 +142,10 @@ const Home = () => {
           <Link to="/shop?category=pillar-candles" className="group">
             <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&h=600&fit=crop&auto=format&q=90"
+                src="/images/Pillarcandles.jpg"
                 alt="Elegant Pillar Candles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {e.target.src='https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&h=600&fit=crop&auto=format&q=90'}}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
                 <h3 className="font-playfair text-xl font-semibold text-white">Pillar Candles</h3>
@@ -151,9 +156,10 @@ const Home = () => {
           <Link to="/shop?category=gift-sets" className="group">
             <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&h=600&fit=crop&auto=format&q=90"
+                src="/images/giftsets.jpg"
                 alt="Luxury Candle Gift Sets"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {e.target.src='https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&h=600&fit=crop&auto=format&q=90'}}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
                 <h3 className="font-playfair text-xl font-semibold text-white">Gift Sets</h3>
