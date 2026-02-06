@@ -35,7 +35,12 @@ const Admin = () => {
   );
 
   // Fetch categories
-  const { data: categoriesData } = useQuery('categories', apiService.getCategories);
+  const { data: categoriesData } = useQuery('categories', apiService.getCategories, {
+    onSuccess: (data) => {
+      console.log('Admin Categories API response:', data);
+      console.log('Admin Categories array:', data?.categories || data?.data?.categories);
+    }
+  });
 
   // Add product mutation
   const addProductMutation = useMutation(

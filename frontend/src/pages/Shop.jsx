@@ -21,7 +21,12 @@ const Shop = () => {
     search: searchParams.get('search') || '',
   });
 
-  const { data: categories } = useQuery('categories', apiService.getCategories);
+  const { data: categories } = useQuery('categories', apiService.getCategories, {
+    onSuccess: (data) => {
+      console.log('Categories API response:', data);
+      console.log('Categories array:', data?.categories || data?.data?.categories);
+    }
+  });
 
   const { data: productsData, isLoading } = useQuery(
     ['products', filters],
