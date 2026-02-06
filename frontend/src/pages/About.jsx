@@ -12,7 +12,7 @@ const About = () => {
             alt="Our Story"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-cream/95 via-cream/90 to-cream/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/70 to-cream/80"></div>
         </div>
         <div className="container-custom text-center relative z-10">
           <motion.p
@@ -51,7 +51,7 @@ const About = () => {
             className="relative"
           >
             <img
-              src="https://media.istockphoto.com/id/2181080529/photo/close-up-of-a-hand-lighting-a-red-candle-with-a-match-creating-a-warm-and-cozy-atmosphere.jpg"
+              src="https://static.vecteezy.com/system/resources/thumbnails/022/886/173/small/candles-burn-in-glass-jars-comfort-at-home-candle-in-a-brown-jar-scent-and-light-scented-handmade-candle-aroma-therapy-christmas-tree-and-winter-mood-generative-ai-photo.jpg"
               alt="Handcrafted Candles"
               className="rounded-lg shadow-2xl"
             />
@@ -188,7 +188,7 @@ const About = () => {
             alt="Join Us"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brown/80"></div>
+          <div className="absolute inset-0 bg-brown/40"></div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -196,7 +196,7 @@ const About = () => {
           viewport={{ once: true }}
           className="container-custom text-center relative z-10"
         >
-          <p className="font-dancing text-4xl text-gold mb-4">Begin Your Journey</p>
+          <p className="font-dancing text-4xl text-gold mb-4 font-bold">Begin Your Journey</p>
           <h2 className="font-cormorant text-5xl md:text-6xl font-light text-white mb-6 italic">
             Experience VELUNA
           </h2>
