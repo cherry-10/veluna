@@ -25,47 +25,48 @@ const Home = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1920&h=1080&fit=crop&auto=format&q=90"
-            alt="Handcrafted candles"
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=2000&h=1200&fit=crop&auto=format&q=95"
+            alt="Luxury handcrafted candles"
+            className="w-full h-full object-cover object-center"
             loading="eager"
-            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1920&h=1080&fit=crop&auto=format&q=90'}}
+            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=2000&h=1200&fit=crop&auto=format&q=95'}}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream/90 via-cream/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         </div>
 
-        <div className="container-custom relative z-10 text-center px-4">
+        <div className="container-custom relative z-10 text-left md:text-center px-6 md:px-4 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="backdrop-blur-sm bg-white/10 p-8 md:p-12 rounded-2xl"
           >
-            <p className="font-dancing text-2xl md:text-3xl text-gold mb-4">
+            <p className="font-dancing text-3xl md:text-4xl text-gold mb-4 drop-shadow-lg">
               Discover Luxury
             </p>
-            <h1 className="font-cormorant text-4xl md:text-6xl lg:text-7xl font-light text-brown mb-3 tracking-wide italic">
+            <h1 className="font-cormorant text-5xl md:text-7xl lg:text-8xl font-light text-white mb-4 tracking-wide italic drop-shadow-2xl">
               Handcrafted Elegance
             </h1>
-            <h2 className="font-playfair text-xl md:text-2xl lg:text-3xl font-light text-charcoal mb-6 tracking-widest uppercase">
+            <h2 className="font-playfair text-xl md:text-2xl lg:text-3xl font-light text-cream mb-6 tracking-widest uppercase drop-shadow-lg">
               Candles & Floral Creations
             </h2>
-            <p className="font-cormorant text-lg md:text-xl text-charcoal-light mb-8 italic max-w-2xl mx-auto">
+            <p className="font-cormorant text-xl md:text-2xl text-white/90 mb-10 italic max-w-3xl mx-auto drop-shadow-lg">
               Where artistry meets fragrance, crafted with love, warmth, and soul
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
               <Link
                 to="/shop"
-                className="inline-block px-10 py-4 bg-brown text-white rounded-full hover:bg-brown-dark transition-all duration-300 font-montserrat text-sm tracking-wider uppercase shadow-lg hover:shadow-xl"
+                className="inline-block px-12 py-5 bg-brown text-white rounded-full hover:bg-brown-dark hover:scale-105 transition-all duration-300 font-montserrat text-sm tracking-wider uppercase shadow-2xl hover:shadow-3xl"
               >
                 Explore Collection
               </Link>
               <Link
                 to="/customize"
-                className="inline-block px-10 py-4 border-2 border-brown text-brown rounded-full hover:bg-brown hover:text-white transition-all duration-300 font-montserrat text-sm tracking-wider uppercase"
+                className="inline-block px-12 py-5 border-2 border-white text-white rounded-full hover:bg-white hover:text-brown transition-all duration-300 font-montserrat text-sm tracking-wider uppercase shadow-xl"
               >
                 Custom Orders
               </Link>
@@ -77,22 +78,22 @@ const Home = () => {
       {/* Quick Entry Buttons */}
       <section className="container-custom py-8 -mt-12 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link to="/shop?category=candles" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-48">
+          <Link to="/shop?category=candles" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-56">
             <img
-              src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1200&h=400&fit=crop&auto=format&q=90"
+              src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1400&h=600&fit=crop&auto=format&q=95"
               alt="Handcrafted Candles"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
               <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Handcrafted Candles</h3>
               <p className="text-white/90">Explore our collection</p>
             </div>
           </Link>
-          <Link to="/shop?category=flowers" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-48">
+          <Link to="/shop?category=flowers" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-56">
             <img
-              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&h=400&fit=crop&auto=format&q=90"
+              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1400&h=600&fit=crop&auto=format&q=95"
               alt="Floral Decorated Candles"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
               <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Floral Creations</h3>
