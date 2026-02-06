@@ -183,10 +183,10 @@ router.get('/bestsellers/list', async (req, res) => {
                 short_description,
                 product_images!inner(image_url)
             `)
-            .eq('is_bestseller', true)
             .eq('is_active', true)
             .eq('product_images.is_primary', true)
-            .limit(10);
+            .order('created_at', { ascending: false })
+            .limit(4);
 
         if (error) {
             return res.status(400).json({
