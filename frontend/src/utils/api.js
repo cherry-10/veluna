@@ -45,6 +45,9 @@ export const apiService = {
   getFeaturedProducts: () => api.get('/products/featured/list'),
   getBestsellers: () => api.get('/products/bestsellers/list'),
   getRelatedProducts: (id) => api.get(`/products/${id}/related`),
+  createProduct: (data) => api.post('/products', data),
+  updateProduct: (id, data) => api.put(`/products/${id}`, data),
+  deleteProduct: (id) => api.delete(`/products/${id}`),
 
   // Categories
   getCategories: () => api.get('/categories'),
