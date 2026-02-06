@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { apiService } from '../utils/api';
 import Button from '../components/UI/Button';
 import toast from 'react-hot-toast';
-import { FiMail, FiPhone, FiMapPin, FiInstagram } from 'react-icons/fi';
+import { FiMail, FiMapPin } from 'react-icons/fi';
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -146,42 +146,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-charcoal mb-1">Email</h3>
                     <a
-                      href="mailto:hello@velunaskf.com"
+                      href="mailto:veluna.skf@gmail.com"
                       className="text-charcoal-light hover:text-brown transition-colors"
                     >
-                      hello@velunaskf.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-beige rounded-full flex items-center justify-center flex-shrink-0">
-                    <FiPhone className="w-6 h-6 text-brown" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-charcoal mb-1">Phone</h3>
-                    <a
-                      href="tel:+919876543210"
-                      className="text-charcoal-light hover:text-brown transition-colors"
-                    >
-                      +91 98765 43210
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-beige rounded-full flex items-center justify-center flex-shrink-0">
-                    <FiInstagram className="w-6 h-6 text-brown" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-charcoal mb-1">Instagram</h3>
-                    <a
-                      href="https://instagram.com/velunaskf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-charcoal-light hover:text-brown transition-colors"
-                    >
-                      @velunaskf
+                      veluna.skf@gmail.com
                     </a>
                   </div>
                 </div>
