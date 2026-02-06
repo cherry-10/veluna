@@ -205,6 +205,137 @@ router.get('/bestsellers/list', async (req, res) => {
     }
 });
 
+// Create new product (Admin)
+router.post('/', async (req, res) => {
+    try {
+        const productData = req.body;
+
+        // Insert product
+        const { data: product, error: productError } = await supabaseAdmin
+            .from('products')
+            .insert(productData)
+            .select()
+            .single();
+
+        if (productError) {
+            return res.status(400).json({
+                error: 'Insert Failed',
+                message: productError.message
+            });
+        }
+
+        // If image_url is provided, add it to product_images
+        if (productData.image_url) {
+            await supabaseAdmin
+                .from('product_images')
+                .insert({
+                    product_id: product.id,
+                    image_url: productData.image_url,
+                    is_primary: true,
+                    display_order: 1
+                });
+        }
+
+        res.status(201).json({ product });
+    } catch (error) {
+        console.error('Create product error:', error);
+        res.status(500).json({
+            error: 'Internal Server Error',
+            message: 'Failed to create product'
+        });
+    }
+});
+
+// Update product (Admin)
+router.put('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const productData = req.body;
+
+        // Remove image_url from product data if present
+        const { image_url, ...updateData } = productData;
+
+        const { data: product, error } = await supabaseAdmin
+            .from('products')
+            .update(updateData)
+            .eq('id', id)
+            .select()
+            .single();
+
+        if (error) {
+            return res.status(400).json({
+                error: 'Update Failed',
+                message: error.message
+            });
+        }
+
+        // Update image if provided
+        if (image_url) {
+            // Check if image exists
+            const { data: existingImage } = await supabaseAdmin
+                .from('product_images')
+                .select('id')
+                .eq('product_id', id)
+                .eq('is_primary', true)
+                .single();
+
+            if (existingImage) {
+                await supabaseAdmin
+                    .from('product_images')
+                    .update({ image_url })
+                    .eq('id', existingImage.id);
+            } else {
+                await supabaseAdmin
+                    .from('product_images')
+                    .insert({
+                        product_id: id,
+                        image_url,
+                        is_primary: true,
+                        display_order: 1
+                    });
+            }
+        }
+
+        res.json({ product });
+    } catch (error) {
+        console.error('Update product error:', error);
+        res.status(500).json({
+            error: 'Internal Server Error',
+            message: 'Failed to update product'
+        });
+    }
+});
+
+// Delete product (Admin)
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // Soft delete by setting is_active to false
+        const { data, error } = await supabaseAdmin
+            .from('products')
+            .update({ is_active: false })
+            .eq('id', id)
+            .select()
+            .single();
+
+        if (error) {
+            return res.status(400).json({
+                error: 'Delete Failed',
+                message: error.message
+            });
+        }
+
+        res.json({ message: 'Product deleted successfully', product: data });
+    } catch (error) {
+        console.error('Delete product error:', error);
+        res.status(500).json({
+            error: 'Internal Server Error',
+            message: 'Failed to delete product'
+        });
+    }
+});
+
 // Get related products
 router.get('/:id/related', async (req, res) => {
     try {
