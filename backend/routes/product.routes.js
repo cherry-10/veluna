@@ -195,7 +195,13 @@ router.get('/bestsellers/list', async (req, res) => {
             });
         }
 
-        res.json({ products: data });
+        // Transform data to include primary_image field
+        const products = data.map(product => ({
+            ...product,
+            primary_image: product.product_images?.[0]?.image_url || null
+        }));
+
+        res.json({ data: products });
     } catch (error) {
         console.error('Get bestseller products error:', error);
         res.status(500).json({
