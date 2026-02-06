@@ -151,7 +151,7 @@ const Admin = () => {
   };
 
   const products = productsData?.data?.products || [];
-  const categories = categoriesData?.data?.categories || [];
+  const categories = categoriesData?.categories || categoriesData?.data?.categories || [];
 
   // Check if user is admin (you can add proper admin check)
   if (!user) {
