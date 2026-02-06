@@ -51,7 +51,7 @@ const About = () => {
             className="relative"
           >
             <img
-              src="https://images.unsplash.com/photo-1602874801006-e04b6bacd1e5?q=80&w=800&auto=format&fit=crop"
+              src="https://media.istockphoto.com/id/2181080529/photo/close-up-of-a-hand-lighting-a-red-candle-with-a-match-creating-a-warm-and-cozy-atmosphere.jpg"
               alt="Handcrafted Candles"
               className="rounded-lg shadow-2xl"
             />
@@ -106,7 +106,7 @@ const About = () => {
               className="relative order-1 lg:order-2"
             >
               <img
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop"
+                src="https://t3.ftcdn.net/jpg/18/04/44/28/360_F_1804442852_wYgJtLLug36cBFBUn1jeoMX9hHqpQdzl.jpg"
                 alt="Handcrafted Excellence"
                 className="rounded-lg shadow-2xl"
               />
@@ -184,7 +184,7 @@ const About = () => {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=2000&auto=format&fit=crop"
+            src="https://t3.ftcdn.net/jpg/17/00/10/88/360_F_1700108833_2OcyoNxhmciZUkyL8G9sj17ZFaBVHBZq.jpg"
             alt="Join Us"
             className="w-full h-full object-cover"
           />

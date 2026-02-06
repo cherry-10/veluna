@@ -187,7 +187,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {bestsellers?.data?.slice(0, 4).map((product) => (
+              {Array.isArray(bestsellers?.data) && bestsellers.data.slice(0, 4).map((product) => (
                 <Link key={product.id} to={`/product/${product.slug}`} className="product-card">
                   <div className="aspect-square overflow-hidden bg-cream">
                     <img
