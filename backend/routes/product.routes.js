@@ -211,10 +211,13 @@ router.post('/', async (req, res) => {
         const productData = req.body;
         console.log('Received product data:', productData);
 
+        // Separate image_url from product data (it goes in product_images table)
+        const { image_url, ...productFields } = productData;
+
         // Insert product
         const { data: product, error: productError } = await supabaseAdmin
             .from('products')
-            .insert(productData)
+            .insert(productFields)
             .select()
             .single();
 
