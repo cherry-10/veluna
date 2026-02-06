@@ -43,7 +43,6 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="backdrop-blur-sm bg-white/10 p-8 md:p-12 rounded-2xl"
           >
             <p className="font-dancing text-3xl md:text-4xl text-gold mb-4 drop-shadow-lg">
               Discover Luxury
@@ -76,7 +75,7 @@ const Home = () => {
       </section>
 
       {/* Quick Entry Buttons */}
-      <section className="container-custom py-8 -mt-12 relative z-20">
+      <section className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link to="/shop?category=candles" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-56">
             <img
