@@ -29,13 +29,13 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=2000&h=1200&fit=crop&auto=format&q=95"
-            alt="Luxury handcrafted candles"
+            src="https://static.vecteezy.com/system/resources/thumbnails/037/348/916/small/ai-generated-two-candles-with-blossom-flower-on-table-with-bokeh-free-photo.jpg"
+            alt="Luxury handcrafted candles with flowers"
             className="w-full h-full object-cover object-center"
             loading="eager"
-            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=2000&h=1200&fit=crop&auto=format&q=95'}}
+            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=2000&h=1200&fit=crop&auto=format&q=95'}}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
         </div>
 
         <div className="container-custom relative z-10 text-left md:text-center px-6 md:px-4 max-w-5xl mx-auto">
