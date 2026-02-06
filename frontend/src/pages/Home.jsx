@@ -35,7 +35,7 @@ const Home = () => {
             loading="eager"
             onError={(e) => {e.target.src='https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=2000&h=1200&fit=crop&auto=format&q=95'}}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/15 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/35 to-black/20"></div>
         </div>
 
         <div className="container-custom relative z-10 text-left md:text-center px-6 md:px-4 max-w-5xl mx-auto">
@@ -177,57 +177,57 @@ const Home = () => {
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-brown italic">Customer Favorites</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link to="/product/lavender-dreams" className="product-card">
+            <Link to="/product/scented-daisy-floating" className="product-card">
               <div className="aspect-square overflow-hidden bg-cream">
                 <img
-                  src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=500&h=500&fit=crop&auto=format&q=90"
-                  alt="Lavender Dreams Candle"
+                  src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Scented Daisy Floating Candles"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-charcoal mb-2">Lavender Dreams</h3>
-                <p className="text-xs text-charcoal-light mb-2">Calming lavender scent</p>
+                <h3 className="font-semibold text-charcoal mb-2">Scented Daisy Floating Candles</h3>
+                <p className="text-xs text-charcoal-light mb-2">Delicate floral floating candles</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-sm text-gray-400 line-through mr-2">₹799</span>
-                    <span className="text-lg font-bold text-brown">₹599</span>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹499</span>
+                    <span className="text-lg font-bold text-brown">₹399</span>
                   </div>
                 </div>
               </div>
             </Link>
 
-            <Link to="/product/rose-garden" className="product-card">
+            <Link to="/product/heart-shape-red" className="product-card">
               <div className="aspect-square overflow-hidden bg-cream">
                 <img
-                  src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=500&fit=crop&auto=format&q=90"
-                  alt="Rose Garden Candle"
+                  src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Heart Shape Red Candle"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-charcoal mb-2">Rose Garden</h3>
-                <p className="text-xs text-charcoal-light mb-2">Romantic rose fragrance</p>
+                <h3 className="font-semibold text-charcoal mb-2">Heart Shape Red Candle</h3>
+                <p className="text-xs text-charcoal-light mb-2">Romantic heart-shaped design</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-sm text-gray-400 line-through mr-2">₹849</span>
-                    <span className="text-lg font-bold text-brown">₹649</span>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹599</span>
+                    <span className="text-lg font-bold text-brown">₹449</span>
                   </div>
                 </div>
               </div>
             </Link>
 
-            <Link to="/product/vanilla-bliss" className="product-card">
+            <Link to="/product/teddy-bear-candle" className="product-card">
               <div className="aspect-square overflow-hidden bg-cream">
                 <img
-                  src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=500&h=500&fit=crop&auto=format&q=90"
-                  alt="Vanilla Bliss Candle"
+                  src="https://images.unsplash.com/photo-1602874801006-e04b6bacd1e5?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Teddy Bear Candle"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-charcoal mb-2">Vanilla Bliss</h3>
-                <p className="text-xs text-charcoal-light mb-2">Sweet vanilla warmth</p>
+                <h3 className="font-semibold text-charcoal mb-2">Teddy Bear Candle</h3>
+                <p className="text-xs text-charcoal-light mb-2">Adorable bear-shaped candle</p>
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-sm text-gray-400 line-through mr-2">₹699</span>
@@ -237,20 +237,21 @@ const Home = () => {
               </div>
             </Link>
 
-            <Link to="/product/eucalyptus-mint" className="product-card">
+            <Link to="/product/double-layered-heart-glass" className="product-card">
               <div className="aspect-square overflow-hidden bg-cream">
                 <img
-                  src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&h=500&fit=crop&auto=format&q=90"
-                  alt="Eucalyptus Mint Candle"
+                  src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Double Layered Heart Glass Candle"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-charcoal mb-2">Eucalyptus Mint</h3>
-                <p className="text-xs text-charcoal-light mb-2">Fresh & invigorating</p>
+                <h3 className="font-semibold text-charcoal mb-2">Double Layered Heart Glass Candle</h3>
+                <p className="text-xs text-charcoal-light mb-2">Elegant layered glass design</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-lg font-bold text-brown">₹599</span>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹899</span>
+                    <span className="text-lg font-bold text-brown">₹699</span>
                   </div>
                 </div>
               </div>

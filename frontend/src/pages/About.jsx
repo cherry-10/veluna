@@ -8,11 +8,11 @@ const About = () => {
       <section className="relative py-40 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=2000&auto=format&fit=crop"
+            src="https://thumbs.dreamstime.com/b/girl-holding-burning-candle-peaceful-moment-spiritual-lighting-young-enveloped-serene-atmosphere-reflecting-meditation-386876525.jpg"
             alt="Our Story"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-cream/95 via-cream/90 to-cream/95"></div>
+          <div className="absolute inset-0 bg-white/60"></div>
         </div>
         <div className="container-custom text-center relative z-10">
           <motion.p
@@ -106,8 +106,8 @@ const About = () => {
               className="relative order-1 lg:order-2"
             >
               <img
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop"
-                alt="Floral Candles"
+                src="https://cdn.shopify.com/s/files/1/0781/2910/3180/files/PUBLICATION_INSTA_4_480x480.png?v=1721223175"
+                alt="Handcrafted Excellence"
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -top-6 -left-6 w-48 h-48 bg-brown/10 rounded-lg -z-10"></div>
@@ -117,8 +117,16 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="bg-white py-20">
-        <div className="container-custom">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://thumbs.dreamstime.com/b/rustic-handmade-gift-shop-candles-soaps-valentines-packaging-picture-353666360.jpg"
+            alt="Handmade Candles Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <p className="font-dancing text-3xl text-gold mb-2">What We Stand For</p>
             <h2 className="font-cormorant text-5xl font-light text-brown italic">Our Values</h2>
