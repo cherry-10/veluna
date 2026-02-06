@@ -112,14 +112,25 @@ const Admin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    // Remove empty fields and prepare data
     const productData = {
-      ...formData,
+      sku: formData.sku,
+      name: formData.name,
+      slug: formData.slug,
+      category_id: formData.category_id,
       price: parseFloat(formData.price),
-      original_price: formData.original_price ? parseFloat(formData.original_price) : null,
       stock_quantity: parseInt(formData.stock_quantity),
-      burn_time: formData.burn_time_hours ? parseInt(formData.burn_time_hours) : null,
-      weight: formData.weight_grams ? parseFloat(formData.weight_grams) : null,
+      is_featured: formData.is_featured || false,
     };
+
+    // Add optional fields only if they have values
+    if (formData.description) productData.description = formData.description;
+    if (formData.short_description) productData.short_description = formData.short_description;
+    if (formData.original_price) productData.original_price = parseFloat(formData.original_price);
+    if (formData.fragrance_notes) productData.fragrance_notes = formData.fragrance_notes;
+    if (formData.burn_time_hours) productData.burn_time = parseInt(formData.burn_time_hours);
+    if (formData.weight_grams) productData.weight = parseFloat(formData.weight_grams);
+    if (formData.image_url) productData.image_url = formData.image_url;
 
     if (editingProduct) {
       updateProductMutation.mutate({ id: editingProduct.id, data: productData });
