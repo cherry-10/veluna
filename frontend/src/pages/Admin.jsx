@@ -117,8 +117,8 @@ const Admin = () => {
       price: parseFloat(formData.price),
       original_price: formData.original_price ? parseFloat(formData.original_price) : null,
       stock_quantity: parseInt(formData.stock_quantity),
-      burn_time_hours: formData.burn_time_hours ? parseInt(formData.burn_time_hours) : null,
-      weight_grams: formData.weight_grams ? parseInt(formData.weight_grams) : null,
+      burn_time: formData.burn_time_hours ? parseInt(formData.burn_time_hours) : null,
+      weight: formData.weight_grams ? parseFloat(formData.weight_grams) : null,
     };
 
     if (editingProduct) {
