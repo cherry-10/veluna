@@ -1,0 +1,287 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useQuery } from 'react-query';
+import { apiService } from '../utils/api';
+import LoadingSpinner from '../components/UI/LoadingSpinner';
+import { FiArrowRight } from 'react-icons/fi';
+
+const Home = () => {
+  const { data: featuredProducts, isLoading: loadingFeatured } = useQuery(
+    'featuredProducts',
+    apiService.getFeaturedProducts
+  );
+
+  const { data: categories } = useQuery('categories', apiService.getCategories);
+
+  useEffect(() => {
+    // Check if user should see splash screen
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    if (!hasSeenSplash) {
+      window.location.href = '/splash';
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Hero Section */}
+      <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1920&h=1080&fit=crop&auto=format&q=90"
+            alt="Handcrafted candles"
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1920&h=1080&fit=crop&auto=format&q=90'}}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream/90 via-cream/70 to-transparent"></div>
+        </div>
+
+        <div className="container-custom relative z-10 text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="font-dancing text-2xl md:text-3xl text-gold mb-4">
+              Discover Luxury
+            </p>
+            <h1 className="font-cormorant text-4xl md:text-6xl lg:text-7xl font-light text-brown mb-3 tracking-wide italic">
+              Handcrafted Elegance
+            </h1>
+            <h2 className="font-playfair text-xl md:text-2xl lg:text-3xl font-light text-charcoal mb-6 tracking-widest uppercase">
+              Candles & Floral Creations
+            </h2>
+            <p className="font-cormorant text-lg md:text-xl text-charcoal-light mb-8 italic max-w-2xl mx-auto">
+              Where artistry meets fragrance, crafted with love, warmth, and soul
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/shop"
+                className="inline-block px-10 py-4 bg-brown text-white rounded-full hover:bg-brown-dark transition-all duration-300 font-montserrat text-sm tracking-wider uppercase shadow-lg hover:shadow-xl"
+              >
+                Explore Collection
+              </Link>
+              <Link
+                to="/customize"
+                className="inline-block px-10 py-4 border-2 border-brown text-brown rounded-full hover:bg-brown hover:text-white transition-all duration-300 font-montserrat text-sm tracking-wider uppercase"
+              >
+                Custom Orders
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Quick Entry Buttons */}
+      <section className="container-custom py-8 -mt-12 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Link to="/shop?category=candles" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-48">
+            <img
+              src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=1200&h=400&fit=crop&auto=format&q=90"
+              alt="Handcrafted Candles"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
+              <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Handcrafted Candles</h3>
+              <p className="text-white/90">Explore our collection</p>
+            </div>
+          </Link>
+          <Link to="/shop?category=flowers" className="group relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 h-48">
+            <img
+              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&h=400&fit=crop&auto=format&q=90"
+              alt="Floral Decorated Candles"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
+              <h3 className="font-playfair text-3xl font-semibold text-white mb-2">Floral Creations</h3>
+              <p className="text-white/90">Beautiful arrangements</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="container-custom py-12">
+        <div className="text-center mb-8">
+          <p className="font-dancing text-3xl text-gold mb-2">Explore</p>
+          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-brown italic">Our Collections</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <Link to="/shop?category=jar-candles" className="group">
+            <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=600&h=600&fit=crop&auto=format&q=90"
+                alt="Luxury Jar Candles"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                <h3 className="font-playfair text-xl font-semibold text-white">Jar Candles</h3>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/shop?category=flower-candles" className="group">
+            <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&h=600&fit=crop&auto=format&q=90"
+                alt="Floral Decorated Candles"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                <h3 className="font-playfair text-xl font-semibold text-white">Flower Candles</h3>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/shop?category=pillar-candles" className="group">
+            <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&h=600&fit=crop&auto=format&q=90"
+                alt="Elegant Pillar Candles"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                <h3 className="font-playfair text-xl font-semibold text-white">Pillar Candles</h3>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/shop?category=gift-sets" className="group">
+            <div className="relative overflow-hidden rounded-veluna shadow-veluna hover:shadow-veluna-lg transition-all duration-300 aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&h=600&fit=crop&auto=format&q=90"
+                alt="Luxury Candle Gift Sets"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                <h3 className="font-playfair text-xl font-semibold text-white">Gift Sets</h3>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Best Sellers Section */}
+      <section className="bg-white py-12">
+        <div className="container-custom">
+          <div className="text-center mb-8">
+            <p className="font-dancing text-3xl text-gold mb-2">Bestsellers</p>
+            <h2 className="font-cormorant text-4xl md:text-5xl font-light text-brown italic">Customer Favorites</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link to="/product/lavender-dreams" className="product-card">
+              <div className="aspect-square overflow-hidden bg-cream">
+                <img
+                  src="https://images.unsplash.com/photo-1602874801006-e24a9ea8f8a7?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Lavender Dreams Candle"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-charcoal mb-2">Lavender Dreams</h3>
+                <p className="text-xs text-charcoal-light mb-2">Calming lavender scent</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹799</span>
+                    <span className="text-lg font-bold text-brown">₹599</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/product/rose-garden" className="product-card">
+              <div className="aspect-square overflow-hidden bg-cream">
+                <img
+                  src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Rose Garden Candle"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-charcoal mb-2">Rose Garden</h3>
+                <p className="text-xs text-charcoal-light mb-2">Romantic rose fragrance</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹849</span>
+                    <span className="text-lg font-bold text-brown">₹649</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/product/vanilla-bliss" className="product-card">
+              <div className="aspect-square overflow-hidden bg-cream">
+                <img
+                  src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Vanilla Bliss Candle"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-charcoal mb-2">Vanilla Bliss</h3>
+                <p className="text-xs text-charcoal-light mb-2">Sweet vanilla warmth</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-sm text-gray-400 line-through mr-2">₹699</span>
+                    <span className="text-lg font-bold text-brown">₹549</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/product/eucalyptus-mint" className="product-card">
+              <div className="aspect-square overflow-hidden bg-cream">
+                <img
+                  src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&h=500&fit=crop&auto=format&q=90"
+                  alt="Eucalyptus Mint Candle"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-charcoal mb-2">Eucalyptus Mint</h3>
+                <p className="text-xs text-charcoal-light mb-2">Fresh & invigorating</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-lg font-bold text-brown">₹599</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Story Teaser */}
+      <section className="bg-beige py-16">
+        <div className="container-custom text-center max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-playfair text-3xl md:text-4xl font-semibold text-brown mb-6">
+              Our Story
+            </h2>
+            <p className="text-lg text-charcoal-light mb-8 leading-relaxed">
+              Created from a passion for fragrances and the warmth of a cozy home. 
+              Every candle and floral creation is handcrafted with love, bringing 
+              beauty and comfort to your special moments.
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-brown font-medium hover:text-gold transition-colors group"
+            >
+              Discover Veluna
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
