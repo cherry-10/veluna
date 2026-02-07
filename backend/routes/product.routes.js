@@ -32,7 +32,16 @@ router.get('/', async (req, res) => {
             .eq('is_active', true);
 
         if (category) {
-            query = query.eq('category_id', category);
+            // First get category ID from slug
+            const { data: categoryData } = await supabaseAdmin
+                .from('categories')
+                .select('id')
+                .eq('slug', category)
+                .single();
+            
+            if (categoryData) {
+                query = query.eq('category_id', categoryData.id);
+            }
         }
 
         if (subcategory) {
